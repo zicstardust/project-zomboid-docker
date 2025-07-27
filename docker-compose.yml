@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: project_zomboid_dedicated_server
+    image: project_zomboid_dedicated_server:latest
+    build: .
+    env_file: .env
+    ports:
+      - 16261:16261/udp #Default_Port
+      #- 16262:16262/udp #direct connection
+      #- 27015:27015 #Rcon_port
+    volumes:
+      - ./data:/home/steam/Zomboid/
