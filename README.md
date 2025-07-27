@@ -40,6 +40,8 @@ services:
 | variables | Function | Default |
 | :----: | --- | --- |
 | `TZ` | Set Timezone | |
+| `UID` | Set UID | 1000 |
+| `GID` | Set GID | 1000 |
 | `ADMIN_USERNAME` | Set User ID | admin |
 | `ADMIN_PASSWORD` | Set Group ID | `generate random password` |
 | `STEAM` | set `0` to join non-steam players | 1 |

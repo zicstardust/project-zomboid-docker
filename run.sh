@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/steam/pz_server
+cd /app
 
 #Set non-steam
 sed -i "s/-Dzomboid.steam=1/-Dzomboid.steam=${STEAM:-1}/" ProjectZomboid64.json

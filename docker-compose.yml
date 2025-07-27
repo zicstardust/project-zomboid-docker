@@ -9,4 +9,5 @@ services:
       #- 16262:16262/udp #direct connection
       #- 27015:27015 #Rcon_port
     volumes:
-      - ./data:/home/steam/Zomboid/
+      #- ./data:/home/pzserver/Zomboid/
+      - ./data:/data/
