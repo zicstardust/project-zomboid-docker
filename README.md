@@ -32,7 +32,7 @@ services:
       #- 16262:16262/udp #Direct Connection
       #- 27015:27015 #Rcon_port (Import set rcon password in server.ini)
     volumes:
-      - /path/to/data:/home/steam/Zomboid/
+      - /path/to/data:/data
 ```
 
 ## Environment variables

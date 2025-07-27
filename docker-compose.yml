@@ -10,4 +10,4 @@ services:
       #- 27015:27015 #Rcon_port
     volumes:
       #- ./data:/home/pzserver/Zomboid/
-      - ./data:/data/
+      - ./data:/data
