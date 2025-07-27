@@ -1,0 +1,29 @@
+name: Update docker HUB README.md
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: [ "README.md" ]
+  pull_request:
+    branches: [ "main" ]
+    paths: [ "README.md" ]
+
+env:
+  CONTAINER_REPO: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}
+  
+jobs:
+  build:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ env.CONTAINER_REPO }}
