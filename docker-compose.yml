@@ -5,9 +5,9 @@ services:
     build: .
     env_file: .env
     ports:
-      - 16261:16261/udp #Default_Port
+      - 16261:16261/udp #Default Port
       #- 16262:16262/udp #direct connection
-      #- 27015:27015 #Rcon_port
+      - 27015:27015 #Rcon
     volumes:
       #- ./data:/home/pzserver/Zomboid/
       - ./data:/data
