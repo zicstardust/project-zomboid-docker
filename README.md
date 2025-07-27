@@ -16,7 +16,7 @@
 
 | Tag | Available | Description |
 | :----: | :----: |--- |
-| [`latest`](https://github.com/zicstardust/project-zomboid-docker/blob/main/Dockerfile) | ✅ | Server last Stable version |
+| [`latest`](https://github.com/zicstardust/project-zomboid-docker/blob/main/Dockerfile) | ✅ | Server lastest stable version |
 
 ## Usage
 ### docker-compose
