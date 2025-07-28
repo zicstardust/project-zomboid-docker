@@ -9,6 +9,7 @@
 | Architecture | Available | Tag |
 | :----: | :----: | ---- |
 | x86-64 | ✅ | latest, build41, build40 |
+| 386 | ✅ | build40 |
 
 
 ## Tags
