@@ -1,4 +1,4 @@
-name: Push image tag latest to docker hub
+name: Push image tag latest and build41 to docker hub
 
 on:
   push:

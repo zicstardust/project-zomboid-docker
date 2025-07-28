@@ -1,4 +1,4 @@
-name: Push image tag b40 to docker hub
+name: Push image tag build40 to docker hub
 
 on:
   push:
