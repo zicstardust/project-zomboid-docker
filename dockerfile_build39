@@ -14,7 +14,7 @@ RUN sed -i 's/"-Xmx2048m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid64.
 
 RUN sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /home/steam/pz_server/start-server.sh
 
-FROM debian:stable-slim
+FROM debian:12-slim
 
 WORKDIR /app
 

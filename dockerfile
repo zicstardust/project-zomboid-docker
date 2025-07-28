@@ -13,7 +13,7 @@ RUN sed -i 's/"-Xmx768m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid32.j
 RUN sed -i 's/"-Xmx8g",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid64.json
 
 
-FROM debian:stable-slim
+FROM debian:12-slim
 
 WORKDIR /app
 

@@ -14,7 +14,7 @@ RUN sed -i 's/"-Xmx2048m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid64.
 
 
 
-FROM debian:stable-slim
+FROM debian:12-slim
 
 WORKDIR /app
 
