@@ -8,8 +8,8 @@
 
 | Architecture | Available | Tag |
 | :----: | :----: | ---- |
-| x86-64 | ✅ | latest, build41, build40, build39 |
-| 386 | ✅ | build40, build39 |
+| x86-64 | ✅ | latest, build41, build40, build39, build38 |
+| 386 | ✅ | build40, build39, build38 |
 
 
 ## Tags
@@ -19,6 +19,7 @@
 | [`latest`, `build41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile) | ✅ | Last Stable Server (41.78.16) |
 | [`build40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40) | ✅ | Last Build 40 Server (40.43) |
 | [`build39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39) | ✅ | Last Build 39 Server (39.67.5) |
+| [`build38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38) | ✅ | Last Build 38 Server (38.30) |
 
 ## Usage
 ### docker-compose
