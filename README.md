@@ -1,4 +1,4 @@
-# Automatic Docker Bitwarden Backup
+# Project Zomboid Dedicated Server Docker 
 
 [GitHub](https://github.com/zicstardust/project-zomboid-docker)
 
