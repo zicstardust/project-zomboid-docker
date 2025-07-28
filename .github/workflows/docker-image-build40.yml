@@ -12,7 +12,7 @@ on:
     paths:
       - 'dockerfile_build40'
       - 'run.sh'
-      - '.github/workflows/docker-ilinux/386
+      - '.github/workflows/docker-image-build40.yml
 env:
   PLATAFORM_ARCH: linux/386,linux/amd64
   CONTAINER_REPO: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}
