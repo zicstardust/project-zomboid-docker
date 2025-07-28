@@ -4,22 +4,14 @@
 
 [Docker Hub](https://hub.docker.com/r/zicstardust/project-zomboid-dedicated-server)
 
-## Supported Architectures
-
-| Architecture | Available | Tag |
-| :----: | :----: | ---- |
-| x86-64 | ✅ | latest, build41, build40, build39, build38 |
-| 386 | ✅ | build40, build39, build38 |
-
-
 ## Tags
 
-| Tag | Available | Description |
+| Tag | Architecture | Description |
 | :----: | :----: |--- |
-| [`latest`, `build41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile) | ✅ | Last Stable Server (41.78.16) |
-| [`build40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40) | ✅ | Last Build 40 Server (40.43) |
-| [`build39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39) | ✅ | Last Build 39 Server (39.67.5) |
-| [`build38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38) | ✅ | Last Build 38 Server (38.30) |
+| [`latest`, `build41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile) | x86-64 | Last Stable Server (41.78.16) |
+| [`build40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40) | x86-64, 386 | Last Build 40 Server (40.43) |
+| [`build39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39) | x86-64, 386 | Last Build 39 Server (39.67.5) |
+| [`build38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38) | x86-64, 386 | Last Build 38 Server (38.30) |
 
 ## Usage
 ### docker-compose
@@ -33,8 +25,8 @@ services:
     ports:
       - 16261:16261/udp #Default_Port
       #- 16262:16262/udp #Direct Connection (only build 41)
-      #- 8766:8766/udp #Steam 1 Port (only build 40)
-      #- 8767:8767/udp #Steam 2 Port (only build 40)
+      #- 8766:8766/udp #Steam Port 1 (only builds 40,39,38)
+      #- 8767:8767/udp #Steam Port 2 (only builds 40,38,38)
       #- 27015:27015 #Rcon_port (Import set rcon password in server.ini)
     volumes:
       - /path/to/data:/data
