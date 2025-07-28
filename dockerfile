@@ -13,24 +13,25 @@ WORKDIR /app
 ENV UID=1000
 ENV GID=1000
 
-COPY --from=build --chown=pzserver:pzserver /home/steam/pz_server /app
-COPY --chown=pzserver:pzserver run.sh /app
-
 RUN apt-get update \
 && apt-get -y --no-install-suggests --no-install-recommends install ca-certificates \
 && groupadd -g ${GID} pzserver \
 && useradd -m -u ${UID} -g pzserver pzserver \
 && mkdir -p /data \
 && chown -R pzserver:pzserver /data \
-&& chown -R pzserver:pzserver /app  \
-&& chmod +x /app/run.sh
+&& chown -R pzserver:pzserver /app
 
+COPY --chown=pzserver:pzserver run.sh /
+COPY --from=build --chown=pzserver:pzserver /home/steam/pz_server /app
+
+RUN chmod +x /run.sh
 
 USER pzserver
 
 EXPOSE 16261/udp
 EXPOSE 16262/udp
+EXPOSE 27015
 
 VOLUME [ "/data" ]
 
-CMD [ "/app/run.sh" ]
+CMD [ "/run.sh" ]
