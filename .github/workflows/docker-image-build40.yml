@@ -1,22 +1,20 @@
-name: Push image tag latest to docker hub
+name: Push image tag b40 to docker hub
 
 on:
   push:
     branches: [ "main" ]
     paths:
-      - 'dockerfile'
+      - 'dockerfile_build40'
       - 'run.sh'
-      - '.github/workflows/docker-image-latest.yml'
+      - '.github/workflows/docker-image-build40.yml'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'dockerfile'
+      - 'dockerfile_build40'
       - 'run.sh'
-      - '.github/workflows/docker-image-latest.yml'
-
+      - '.github/workflows/docker-ilinux/386
 env:
-  #PLATAFORM_ARCH: linux/amd64,linux/arm64/v8
-  PLATAFORM_ARCH: linux/amd64
+  PLATAFORM_ARCH: linux/386,linux/amd64
   CONTAINER_REPO: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}
   
 jobs:
@@ -50,9 +48,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: dockerfile
+          file: dockerfile_build40
           platforms: ${{ env.PLATAFORM_ARCH }}
           push: true
-          tags: |
-            ${{ env.CONTAINER_REPO }}:latest
-            ${{ env.CONTAINER_REPO }}:build41
+          tags: ${{ env.CONTAINER_REPO }}:build40
