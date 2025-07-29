@@ -1,0 +1,14 @@
+services:
+  app:
+    container_name: project_zomboid_dedicated_server_build38-updatejre
+    image: project_zomboid_dedicated_server:build38-updatejre
+    build:
+      dockerfile: dockerfile_build38-updatejre
+    env_file: .env
+    ports:
+      - 16261:16261/udp #Default Port
+      #- 8766:8766/udp #Steam 1 Port (only build 40)
+      #- 8767:8767/udp #Steam 2 Port (only build 40)
+      - 27015:27015 #Rcon
+    volumes:
+      - ./data:/data
