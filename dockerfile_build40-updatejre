@@ -1,0 +1,67 @@
+FROM cm2network/steamcmd:latest AS build
+
+RUN /home/steam/steamcmd/steamcmd.sh +force_install_dir /home/steam/pz_server +login anonymous +app_update 380870 validate -beta legacy40 +quit
+
+RUN sed -i '/"-XX:-UseSplitVerifier",/ a\
+		"-Duser.home=/data",\' /home/steam/pz_server/ProjectZomboid32.json
+
+RUN sed -i '/"-XX:-UseSplitVerifier",/ a\
+		"-Duser.home=/data",\' /home/steam/pz_server/ProjectZomboid64.json
+
+RUN sed -i 's/"-Xmx768m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid32.json
+
+RUN sed -i 's/"-Xmx2048m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid64.json
+
+RUN rm -Rf /home/steam/pz_server/jre64
+RUN rm -Rf /home/steam/pz_server/jre
+
+FROM debian:12 AS jre
+
+ARG JRE_VERSION="8.88.0.19-ca-jre8.0.462"
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y wget
+
+RUN wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_x64.tar.gz
+RUN wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_i686.tar.gz
+
+RUN tar -xf zulu${JRE_VERSION}-linux_x64.tar.gz
+RUN tar -xf zulu${JRE_VERSION}-linux_i686.tar.gz
+
+RUN mv zulu${JRE_VERSION}-linux_x64 jre64
+RUN mv zulu${JRE_VERSION}-linux_i686 jre
+
+
+FROM debian:12-slim
+
+WORKDIR /app
+
+ENV UID=1000
+ENV GID=1000
+
+RUN apt-get update \
+&& apt-get -y --no-install-suggests --no-install-recommends install ca-certificates \
+&& groupadd -g ${GID} pzserver \
+&& useradd -m -u ${UID} -g pzserver pzserver \
+&& mkdir -p /data \
+&& chown -R pzserver:pzserver /data \
+&& chown -R pzserver:pzserver /app
+
+COPY --chown=pzserver:pzserver run.sh /
+COPY --from=build --chown=pzserver:pzserver /home/steam/pz_server /app
+COPY --from=jre --chown=pzserver:pzserver /app/jre64 /app/jre64
+COPY --from=jre --chown=pzserver:pzserver /app/jre /app/jre
+
+RUN chmod +x /run.sh
+
+USER pzserver
+
+EXPOSE 16261/udp
+EXPOSE 8766/udp
+EXPOSE 8767/udp
+EXPOSE 27015
+
+VOLUME [ "/data" ]
+
+CMD [ "/run.sh" ]

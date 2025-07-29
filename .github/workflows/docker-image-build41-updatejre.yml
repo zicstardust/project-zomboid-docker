@@ -1,0 +1,54 @@
+name: Push image tag build41-updatejre to docker hub
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'dockerfile_build41-updatejre'
+      - 'run.sh'
+      - '.github/workflows/docker-image-build41-updatejre.yml'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'dockerfile_build41-updatejre'
+      - 'run.sh'
+      - '.github/workflows/docker-image-build41-updatejre.yml'
+env:
+  PLATAFORM_ARCH: linux/386,linux/amd64
+  CONTAINER_REPO: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}
+  
+jobs:
+  build:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          platforms: ${{ env.PLATAFORM_ARCH }}
+                
+      -
+        name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: dockerfile_build41-updatejre
+          platforms: ${{ env.PLATAFORM_ARCH }}
+          push: true
+          tags: ${{ env.CONTAINER_REPO }}:build41-updatejre

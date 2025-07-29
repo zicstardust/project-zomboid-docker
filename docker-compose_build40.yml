@@ -1,7 +1,7 @@
 services:
   app:
     container_name: project_zomboid_dedicated_server_build40
-    image: project_zomboid_dedicated_server:build40
+    image: project-zomboid-dedicated-server:build40
     build:
       dockerfile: dockerfile_build40
     env_file: .env
