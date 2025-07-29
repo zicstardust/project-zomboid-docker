@@ -8,10 +8,10 @@
 
 | Tag | Architecture | Description |
 | :----: | :----: |--- |
-| [`latest`, `build41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile) | x86-64 | Last Stable Server (41.78.16) |
-| [`build40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40) | x86-64, 386 | Last Build 40 Server (40.43) |
-| [`build39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39) | x86-64, 386 | Last Build 39 Server (39.67.5) |
-| [`build38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38) | x86-64, 386 | Last Build 38 Server (38.30) |
+| [`latest`, `build41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build41) | amd64 | Last Stable Server (41.78.16) |
+| [`build40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40) | i386, amd64 | Last Build 40 Server (40.43) |
+| [`build39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39) | i386, amd64 | Last Build 39 Server (39.67.5) |
+| [`build38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38) | i386, amd64 | Last Build 38 Server (38.30) |
 
 ## Usage
 ### docker-compose
