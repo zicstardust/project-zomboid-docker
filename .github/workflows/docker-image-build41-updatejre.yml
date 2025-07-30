@@ -1,4 +1,4 @@
-name: Push image tag build41-updatejre to docker hub
+name: Push image tag 41-updatejre to docker hub
 
 on:
   push:
@@ -53,4 +53,4 @@ jobs:
           push: true
           tags: |
             ${{ env.CONTAINER_REPO }}:updatejre
-            ${{ env.CONTAINER_REPO }}:build41-updatejre
+            ${{ env.CONTAINER_REPO }}:41-updatejre

@@ -1,4 +1,4 @@
-name: Push image tag build41 to docker hub
+name: Push image tag 41 to docker hub
 
 on:
   push:
@@ -54,4 +54,4 @@ jobs:
           push: true
           tags: |
             ${{ env.CONTAINER_REPO }}:latest
-            ${{ env.CONTAINER_REPO }}:build41
+            ${{ env.CONTAINER_REPO }}:41

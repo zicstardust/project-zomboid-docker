@@ -1,7 +1,7 @@
 services:
   app:
     container_name: project_zomboid_dedicated_server_build39-updatejre
-    image: project-zomboid-dedicated-server:build39-updatejre
+    image: project-zomboid-dedicated-server:39-updatejre
     build:
       dockerfile: dockerfile_build39-updatejre
     env_file: .env

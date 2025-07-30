@@ -8,14 +8,14 @@
 
 | Tag | Architecture | Description |
 | :----: | :----: |--- |
-| [`latest`, `build41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build41) | amd64 | Last Stable Server (41.78.16) |
-| [`updatejre`, `build41-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build41-updatejre) | amd64 | Last Stable Server (41.78.16) with JRE updated |
-| [`build40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40) | i386, amd64 | Last Build 40 Server (40.43) |
-| [`build40-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40-updatejre) | i386, amd64 | Last Build 40 Server (40.43) with JRE updated |
-| [`build39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39) | i386, amd64 | Last Build 39 Server (39.67.5) |
-| [`build39-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39-updatejre) | i386, amd64 | Last Build 39 Server (39.67.5) with JRE updated |
-| [`build38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38) | i386, amd64 | Last Build 38 Server (38.30) |
-| [`build38-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38-updatejre) | i386, amd64 | Last Build 38 Server (38.30) with JRE updated |
+| [`latest`, `41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build41) | amd64 | Last Stable Server (41.78.16) |
+| [`updatejre`, `41-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build41-updatejre) | amd64 | Last Stable Server (41.78.16) with JRE updated |
+| [`40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40) | i386, amd64 | Last Build 40 Server (40.43) |
+| [`40-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40-updatejre) | i386, amd64 | Last Build 40 Server (40.43) with JRE updated |
+| [`39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39) | i386, amd64 | Last Build 39 Server (39.67.5) |
+| [`39-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39-updatejre) | i386, amd64 | Last Build 39 Server (39.67.5) with JRE updated |
+| [`38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38) | i386, amd64 | Last Build 38 Server (38.30) |
+| [`38-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38-updatejre) | i386, amd64 | Last Build 38 Server (38.30) with JRE updated |
 
 ## Usage
 ### docker-compose
@@ -29,8 +29,8 @@ services:
     ports:
       - 16261:16261/udp #Default_Port
       #- 16262:16262/udp #Direct Connection (only build 41)
-      #- 8766:8766/udp #Steam Port 1 (only builds 40,39,38)
-      #- 8767:8767/udp #Steam Port 2 (only builds 40,38,38)
+      #- 8766:8766/udp #Steam Port 1 (only builds 40, 39 and 38)
+      #- 8767:8767/udp #Steam Port 2 (only builds 40, 38 and 38)
       #- 27015:27015 #Rcon_port (Import set rcon password in server.ini)
     volumes:
       - /path/to/data:/data

@@ -1,4 +1,4 @@
-name: Push image tag build38-updatejre to docker hub
+name: Push image tag 38-updatejre to docker hub
 
 on:
   push:
@@ -51,4 +51,4 @@ jobs:
           file: dockerfile_build38-updatejre
           platforms: ${{ env.PLATAFORM_ARCH }}
           push: true
-          tags: ${{ env.CONTAINER_REPO }}:build38-updatejre
+          tags: ${{ env.CONTAINER_REPO }}:38-updatejre
