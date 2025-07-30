@@ -47,3 +47,4 @@ services:
 | `ADMIN_PASSWORD` | Set Group ID | `generate random password` |
 | `STEAM` | set `0` to join non-steam players | 1 |
 | `MAX_RAM` | set max ram to JVM<br/><br/>examples:<br/><br/>`2g = 2 gigabytes`<br/><br/>`1536m = 1536 megabytes`| 4g |
+| `LANGUAGE` | set server language | en |
