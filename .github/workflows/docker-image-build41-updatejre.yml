@@ -51,4 +51,6 @@ jobs:
           file: dockerfile_build41-updatejre
           platforms: ${{ env.PLATAFORM_ARCH }}
           push: true
-          tags: ${{ env.CONTAINER_REPO }}:build41-updatejre
+          tags: |
+            ${{ env.CONTAINER_REPO }}:updatejre
+            ${{ env.CONTAINER_REPO }}:build41-updatejre
