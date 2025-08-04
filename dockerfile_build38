@@ -6,11 +6,11 @@ RUN sed -i 's/"-Xmx768m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid32.j
 
 RUN sed -i 's/"-Xmx2048m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid64.json
 
-RUN sed -i '/"-XmxTEMP",/ a\
-		"-Duser.home=/data",\' /home/steam/pz_server/ProjectZomboid32.json
+#RUN sed -i '/"-XmxTEMP",/ a\
+#		"-Duser.home=/data",\' /home/steam/pz_server/ProjectZomboid32.json
 
-RUN sed -i '/"-XmxTEMP",/ a\
-		"-Duser.home=/data",\' /home/steam/pz_server/ProjectZomboid64.json
+#RUN sed -i '/"-XmxTEMP",/ a\
+#		"-Duser.home=/data",\' /home/steam/pz_server/ProjectZomboid64.json
 
 
 RUN sed -i '/"-XmxTEMP",/ a\
@@ -19,7 +19,15 @@ RUN sed -i '/"-XmxTEMP",/ a\
 RUN sed -i '/"-XmxTEMP",/ a\
 		"-Duser.language=TEMP",\' /home/steam/pz_server/ProjectZomboid64.json
 
+
+		
+RUN sed -i '/"-XmxTEMP",/ a\
+	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid32.json
 	
+RUN sed -i '/"-XmxTEMP",/ a\
+	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid64.json
+	
+		
 
 RUN sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /home/steam/pz_server/start-server.sh
 
