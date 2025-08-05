@@ -1,0 +1,9 @@
+services:
+  app:
+    container_name: pz_dedicated_server_mod_downloader
+    image: pz_dedicated_server_mod_downloader:latest
+    build: .
+    env_file: .env
+    volumes:
+      - ../data/Zomboid/mods:/mods
+      - ../data/Zomboid/Server/server.ini:/server.ini:ro
