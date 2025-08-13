@@ -39,13 +39,13 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y wget
 
 RUN wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_x64.tar.gz
-RUN wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_i686.tar.gz
+#RUN wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_i686.tar.gz
 
 RUN tar -xf zulu${JRE_VERSION}-linux_x64.tar.gz
-RUN tar -xf zulu${JRE_VERSION}-linux_i686.tar.gz
+#RUN tar -xf zulu${JRE_VERSION}-linux_i686.tar.gz
 
 RUN mv zulu${JRE_VERSION}-linux_x64 jre64
-RUN mv zulu${JRE_VERSION}-linux_i686 jre
+#RUN mv zulu${JRE_VERSION}-linux_i686 jre
 
 
 FROM debian:12-slim

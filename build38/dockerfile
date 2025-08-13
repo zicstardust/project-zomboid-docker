@@ -25,6 +25,8 @@ RUN sed -i '/"-XmxTEMP",/ a\
 
 RUN sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /home/steam/pz_server/start-server.sh
 
+RUN rm -Rf /home/steam/pz_server/jre
+
 FROM debian:12-slim
 
 WORKDIR /app
