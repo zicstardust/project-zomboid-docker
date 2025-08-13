@@ -13,6 +13,8 @@ RUN sed -i '/"-XmxTEMP",/ a\
 RUN sed -i '/"-XmxTEMP",/ a\
 	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid64.json
 
+RUN rm -f /home/steam/pz_server/ProjectZomboid32.json
+
 
 RUN rm -Rf /home/steam/pz_server/jre64
 

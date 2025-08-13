@@ -17,8 +17,14 @@ RUN sed -i '/"-XmxTEMP",/ a\
 
 RUN sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /home/steam/pz_server/start-server.sh
 
-RUN rm -Rf /home/steam/pz_server/jre64
 RUN rm -Rf /home/steam/pz_server/jre
+RUN rm -Rf /home/steam/pz_server/linux32
+RUN rm -f /home/steam/pz_server/ProjectZomboid32.json
+RUN rm -f /home/steam/pz_server/libpzexe_jni32.so
+RUN rm -Rf /home/steam/pz_server/natives/*32.so
+RUN rm -f /home/steam/pz_server/ProjectZomboid32
+
+RUN rm -Rf /home/steam/pz_server/jre64
 
 FROM debian:12 AS jre
 
