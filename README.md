@@ -8,14 +8,14 @@
 
 | Tag | Architecture | Description |
 | :----: | :----: |--- |
-| [`latest`, `41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build41) | amd64 | Last Stable Server (41.78.16) |
-| [`updatejre`, `41-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build41-updatejre) | amd64 | Last Stable Server (41.78.16) with JRE updated |
-| [`40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40) | amd64 | Last Build 40 Server (40.43) |
-| [`40-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build40-updatejre) | amd64 | Last Build 40 Server (40.43) with JRE updated |
-| [`39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39) | amd64 | Last Build 39 Server (39.67.5) |
-| [`39-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build39-updatejre) | amd64 | Last Build 39 Server (39.67.5) with JRE updated |
-| [`38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38) | amd64 | Last Build 38 Server (38.30) |
-| [`38-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile_build38-updatejre) | amd64 | Last Build 38 Server (38.30) with JRE updated |
+| [`latest`, `41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build41/dockerfile) | amd64 | Last Stable Server (41.78.16) |
+| [`updatejre`, `41-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build41/dockerfile_updatejre) | amd64 | Last Stable Server (41.78.16) with JRE updated |
+| [`40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build40/dockerfile) | amd64 | Last Build 40 Server (40.43) |
+| [`40-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build40/dockerfile_updatejre) | amd64 | Last Build 40 Server (40.43) with JRE updated |
+| [`39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build39/dockerfile) | amd64 | Last Build 39 Server (39.67.5) |
+| [`39-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build39/dockerfile_updatejre) | amd64 | Last Build 39 Server (39.67.5) with JRE updated |
+| [`38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build38/dockerfile) | amd64 | Last Build 38 Server (38.30) |
+| [`38-updatejre`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build38/dockerfile_updatejre) | amd64 | Last Build 38 Server (38.30) with JRE updated |
 
 ## Usage
 ### docker-compose
