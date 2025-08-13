@@ -2,7 +2,6 @@ FROM cm2network/steamcmd:latest AS build
 
 RUN /home/steam/steamcmd/steamcmd.sh +force_install_dir /home/steam/pz_server +login anonymous +app_update 380870 validate -beta build-39-vehicles +quit
 
-
 RUN sed -i 's/"-Xmx2048m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid64.json
 
 
@@ -15,9 +14,8 @@ RUN sed -i '/"-XmxTEMP",/ a\
 	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid64.json
 
 
-	
-RUN sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /home/steam/pz_server/start-server.sh
 
+RUN sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /home/steam/pz_server/start-server.sh
 
 RUN rm -Rf /home/steam/pz_server/jre
 RUN rm -Rf /home/steam/pz_server/linux32
@@ -28,13 +26,17 @@ RUN rm -f /home/steam/pz_server/ProjectZomboid32
 
 FROM debian:12-slim
 
+ARG JRE_VERSION='"8.88.0.19-ca-jre8.0.462"'
+
 WORKDIR /app
 
-RUN apt-get update && apt-get -y install ca-certificates gosu
+RUN apt-get update && apt-get -y install ca-certificates gosu wget
 
 COPY entrypoint.sh /entrypoint.sh
 COPY run.sh /run.sh
 COPY --from=build /home/steam/pz_server /app
+
+RUN sed -i "s/JRE_VERSION=/JRE_VERSION=${JRE_VERSION}/" /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh /run.sh
 

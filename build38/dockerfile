@@ -9,11 +9,11 @@ RUN sed -i '/"-XmxTEMP",/ a\
 		"-Duser.language=TEMP",\' /home/steam/pz_server/ProjectZomboid64.json
 
 
-	
+
 RUN sed -i '/"-XmxTEMP",/ a\
 	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid64.json
-	
-		
+
+
 
 RUN sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /home/steam/pz_server/start-server.sh
 
@@ -26,13 +26,17 @@ RUN rm -f /home/steam/pz_server/ProjectZomboid32
 
 FROM debian:12-slim
 
+ARG JRE_VERSION='"8.88.0.19-ca-jre8.0.462"'
+
 WORKDIR /app
 
-RUN apt-get update && apt-get -y install ca-certificates gosu
+RUN apt-get update && apt-get -y install ca-certificates gosu wget
 
 COPY entrypoint.sh /entrypoint.sh
 COPY run.sh /run.sh
 COPY --from=build /home/steam/pz_server /app
+
+RUN sed -i "s/JRE_VERSION=/JRE_VERSION=${JRE_VERSION}/" /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh /run.sh
 

@@ -12,17 +12,24 @@ RUN sed -i '/"-XmxTEMP",/ a\
 RUN sed -i '/"-XmxTEMP",/ a\
 	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid64.json
 
+
+
 RUN rm -f /home/steam/pz_server/ProjectZomboid32.json
+
 
 FROM debian:13.0-slim
 
+ARG JRE_VERSION='"17.60.17-ca-jre17.0.16"'
+
 WORKDIR /app
 
-RUN apt-get update && apt-get -y install ca-certificates gosu
+RUN apt-get update && apt-get -y install ca-certificates gosu wget
 
 COPY entrypoint.sh /entrypoint.sh
 COPY run.sh /run.sh
 COPY --from=build /home/steam/pz_server /app
+
+RUN sed -i "s/JRE_VERSION=/JRE_VERSION=${JRE_VERSION}/" /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh /run.sh
 

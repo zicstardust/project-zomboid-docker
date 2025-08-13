@@ -4,14 +4,14 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'build40/**'
+      - 'build40/dockerfile'
       - 'run.sh'
       - 'entrypoint.sh'
       - '.github/workflows/docker-image-build40.yml'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'build40/**'
+      - 'build40/dockerfile'
       - 'run.sh'
       - 'entrypoint.sh'
       - '.github/workflows/docker-image-build40.yml'
