@@ -2,21 +2,21 @@ FROM cm2network/steamcmd:latest AS build
 
 RUN /home/steam/steamcmd/steamcmd.sh +force_install_dir /home/steam/pz_server +login anonymous +app_update 380870 validate -beta legacy40 +quit
 
-RUN sed -i 's/"-Xmx768m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid32.json
+#RUN sed -i 's/"-Xmx768m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid32.json
 
 RUN sed -i 's/"-Xmx2048m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid64.json
 
 
-RUN sed -i '/"-XmxTEMP",/ a\
-		"-Duser.language=TEMP",\' /home/steam/pz_server/ProjectZomboid32.json
+#RUN sed -i '/"-XmxTEMP",/ a\
+#		"-Duser.language=TEMP",\' /home/steam/pz_server/ProjectZomboid32.json
 
 RUN sed -i '/"-XmxTEMP",/ a\
 		"-Duser.language=TEMP",\' /home/steam/pz_server/ProjectZomboid64.json
 
 
 
-RUN sed -i '/"-XmxTEMP",/ a\
-	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid32.json
+#RUN sed -i '/"-XmxTEMP",/ a\
+#	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid32.json
 
 RUN sed -i '/"-XmxTEMP",/ a\
 	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid64.json
