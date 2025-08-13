@@ -2,27 +2,18 @@ FROM cm2network/steamcmd:latest AS build
 
 RUN /home/steam/steamcmd/steamcmd.sh +force_install_dir /home/steam/pz_server +login anonymous +app_update 380870 validate -beta build-39-vehicles +quit
 
-#RUN sed -i 's/"-Xmx768m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid32.json
 
 RUN sed -i 's/"-Xmx2048m",/"-XmxTEMP",/' /home/steam/pz_server/ProjectZomboid64.json
 
-
-#RUN sed -i '/"-XmxTEMP",/ a\
-#		"-Duser.language=TEMP",\' /home/steam/pz_server/ProjectZomboid32.json
 
 RUN sed -i '/"-XmxTEMP",/ a\
 		"-Duser.language=TEMP",\' /home/steam/pz_server/ProjectZomboid64.json
 
 
 
-#RUN sed -i '/"-XmxTEMP",/ a\
-#	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid32.json
-
 RUN sed -i '/"-XmxTEMP",/ a\
 	"-Ddeployment.user.cachedir=/data",\' /home/steam/pz_server/ProjectZomboid64.json
 	
-
-
 
 RUN sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /home/steam/pz_server/start-server.sh
 
@@ -39,13 +30,10 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y wget
 
 RUN wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_x64.tar.gz
-#RUN wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_i686.tar.gz
 
 RUN tar -xf zulu${JRE_VERSION}-linux_x64.tar.gz
-#RUN tar -xf zulu${JRE_VERSION}-linux_i686.tar.gz
 
 RUN mv zulu${JRE_VERSION}-linux_x64 jre64
-#RUN mv zulu${JRE_VERSION}-linux_i686 jre
 
 
 FROM debian:12-slim
