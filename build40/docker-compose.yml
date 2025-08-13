@@ -1,9 +1,10 @@
 services:
   app:
-    container_name: project_zomboid_dedicated_server_build39
-    image: project-zomboid-dedicated-server:39
+    container_name: project_zomboid_dedicated_server_build40
+    image: project-zomboid-dedicated-server:40
     build:
-      dockerfile: dockerfile_build39
+      context: ../
+      dockerfile: ./build40/dockerfile
     env_file: .env
     ports:
       - 16261:16261/udp #Default Port

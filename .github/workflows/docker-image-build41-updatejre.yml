@@ -4,14 +4,16 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'dockerfile_build41-updatejre'
+      - 'build41/**'
       - 'run.sh'
+      - 'entrypoint.sh'
       - '.github/workflows/docker-image-build41-updatejre.yml'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'dockerfile_build41-updatejre'
+      - 'build41/**'
       - 'run.sh'
+      - 'entrypoint.sh'
       - '.github/workflows/docker-image-build41-updatejre.yml'
 env:
   PLATAFORM_ARCH: linux/386,linux/amd64
@@ -48,7 +50,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: dockerfile_build41-updatejre
+          file: build41/dockerfile_updatejre
           platforms: ${{ env.PLATAFORM_ARCH }}
           push: true
           tags: |

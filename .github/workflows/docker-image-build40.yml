@@ -4,14 +4,16 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'dockerfile_build40'
+      - 'build40/**'
       - 'run.sh'
+      - 'entrypoint.sh'
       - '.github/workflows/docker-image-build40.yml'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'dockerfile_build40'
+      - 'build40/**'
       - 'run.sh'
+      - 'entrypoint.sh'
       - '.github/workflows/docker-image-build40.yml'
 env:
   PLATAFORM_ARCH: linux/386,linux/amd64
@@ -48,7 +50,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: dockerfile_build40
+          file: build40/dockerfile
           platforms: ${{ env.PLATAFORM_ARCH }}
           push: true
           tags: ${{ env.CONTAINER_REPO }}:40
