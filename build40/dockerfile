@@ -21,7 +21,7 @@ RUN rm -f /home/steam/pz_server/libpzexe_jni32.so
 RUN rm -Rf /home/steam/pz_server/natives/*32.so
 RUN rm -f /home/steam/pz_server/ProjectZomboid32
 
-FROM debian:12-slim
+FROM debian:13.0-slim
 
 ARG JRE_VERSION='"8.88.0.19-ca-jre8.0.462"'
 
