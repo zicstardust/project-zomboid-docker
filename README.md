@@ -37,11 +37,11 @@ services:
 | variables | Function | Default |
 | :----: | --- | --- |
 | `TZ` | Set Timezone | |
-| `UID` | Set UID | 1000 |
-| `GID` | Set GID | 1000 |
+| `PUID` | Set UID | 1000 |
+| `PGID` | Set GID | 1000 |
 | `ADMIN_USERNAME` | Set User ID | admin |
 | `ADMIN_PASSWORD` | Set Group ID | `generate random password` |
 | `STEAM` | set `0` to join non-steam players | 1 |
 | `MAX_RAM` | set max ram to JVM<br/><br/>examples:<br/><br/>`2g = 2 gigabytes`<br/><br/>`1536m = 1536 megabytes`| 4g |
 | `LANGUAGE` | set server language<br/><br/>examples: `fr`, `ru`, `en`, `pt`, `ptbr`, etc | en |
-| `UPDATE_JRE` | set `1` to update default JRE | |
+| `UPDATE_JRE` | set `1` to update default JRE (experimental)| |

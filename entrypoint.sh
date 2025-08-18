@@ -2,16 +2,15 @@
 
 set -e
 
-: "${UID:=1000}"
-: "${GID:=1000}"
-: "${USERNAME:=pzserver}"
+: "${PUID:=1000}"
+: "${PGID:=1000}"
 
-if ! getent group $USERNAME >/dev/null; then
-    groupadd -g "$GID" "$USERNAME"
+if ! getent group pzserver >/dev/null; then
+    groupadd -g "$PGID" pzserver
 fi
 
-if ! id -u "$USERNAME" >/dev/null 2>&1; then
-    useradd -m -u "$UID" -g "$GID" -s /bin/bash "$USERNAME"
+if ! id -u pzserver >/dev/null 2>&1; then
+    useradd -m -u "$PUID" -g "$PGID" -s /sbin/nologin pzserver
 fi
 
 mkdir -p /data
@@ -19,7 +18,6 @@ mkdir -p /data
 JRE_VERSION=
 if [ "$UPDATE_JRE" == "1" ]; then
     echo "Updating JRE..."
-    #mv /app/jre64 /app/jre_old
     rm -Rf /app/jre64
     wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_x64.tar.gz
     tar -xf zulu${JRE_VERSION}-linux_x64.tar.gz
@@ -28,6 +26,6 @@ if [ "$UPDATE_JRE" == "1" ]; then
 fi
 
 
-chown -R "$USERNAME":"$USERNAME" /app /data
+chown -R pzserver:pzserver /app /data
 
-exec gosu "$USERNAME" "$@"
+exec gosu pzserver "$@"
