@@ -18,7 +18,7 @@ fi
 
 exec gosu pzserver /steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
 
-if awk "BEGIN {exit !($BUILD <= 40)}"; then
+if [ "$BUILD" != "41" ]; then
     sed -i 's/"-Xmx2048m",/"-XmxTEMP",/' /app/ProjectZomboid64.json
 else
     sed -i 's/"-Xmx8g",/"-XmxTEMP",/' /app/ProjectZomboid64.json

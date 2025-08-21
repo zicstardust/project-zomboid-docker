@@ -2,18 +2,19 @@ FROM debian:13.0-slim
 
 WORKDIR /app
 
-RUN apt-get update && apt-get -y install ca-certificates gosu wget
+RUN apt-get update && apt-get -y install ca-certificates gosu wget lib32gcc-s1
 
-RUN curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -; \
+RUN wget "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"; \
+	tar zxvf steamcmd_linux.tar.gz; \
+	rm -f steamcmd_linux.tar.gz; \
 	mkdir /steam; \
 	mv /app/* /steam/
 
 COPY entrypoint.sh /entrypoint.sh
 COPY download_server.sh /download_server.sh
 COPY run.sh /run.sh
-COPY --from=build /home/steam/pz_server /app
 
-RUN chmod +x /entrypoint.sh /run.sh /download_server.sh
+RUN chmod +x /entrypoint.sh /run.sh /download_server.sh /steam/steamcmd.sh
 
 EXPOSE 16261/udp
 #EXPOSE 16262/udp
