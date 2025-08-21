@@ -16,7 +16,9 @@ COPY --from=build /home/steam/pz_server /app
 RUN chmod +x /entrypoint.sh /run.sh /download_server.sh
 
 EXPOSE 16261/udp
-EXPOSE 16262/udp
+#EXPOSE 16262/udp
+#EXPOSE 8766/udp
+#EXPOSE 8766/udp
 EXPOSE 27015
 
 VOLUME [ "/data" ]

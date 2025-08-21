@@ -36,7 +36,7 @@ services:
 | `TZ` | Set Timezone | |
 | `PUID` | Set UID | 1000 |
 | `PGID` | Set GID | 1000 |
-| `VERSION` | Set build server version | 41 |
+| `BUILD` | Set build server version | 41 |
 | `ADMIN_USERNAME` | Set User ID | admin |
 | `ADMIN_PASSWORD` | Set Group ID | `generate random password` |
 | `STEAM` | set `0` to join non-steam players | 1 |
@@ -44,7 +44,7 @@ services:
 | `LANGUAGE` | set server language<br/><br/>examples: `fr`, `ru`, `en`, `pt`, `ptbr`, etc | en |
 | `UPDATE_JRE` | set `1` to update default JRE (experimental)| |
 
-## Set Version
+## Set BUILD Environment
 
 | Value | Function |
 | :----: | --- |
