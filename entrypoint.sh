@@ -17,6 +17,6 @@ mkdir -p /data /home/pzserver
 
 chown -R pzserver:pzserver /app /data /home/pzserver /steam/
 
-/download_server.sh
+exec gosu pzserver /download_server.sh
 
 exec gosu pzserver "$@"

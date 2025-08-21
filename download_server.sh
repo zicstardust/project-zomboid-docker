@@ -16,13 +16,13 @@ else
     exit 1
 fi
 
-exec gosu pzserver /steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
+/steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
 
-if [ "$BUILD" != "41" ]; then
-    sed -i 's/"-Xmx2048m",/"-XmxTEMP",/' /app/ProjectZomboid64.json
-else
-    sed -i 's/"-Xmx8g",/"-XmxTEMP",/' /app/ProjectZomboid64.json
-fi
+#if [ "$BUILD" != "41" ]; then
+    sed -i "s/Xmx2048m/XmxTEMP/" /app/ProjectZomboid64.json
+#else
+    sed -i "s/Xmx8g/XmxTEMP/" /app/ProjectZomboid64.json
+#fi
 
 sed -i '/"-XmxTEMP",/ a\
 		"-Duser.language=TEMP",\' /app/ProjectZomboid64.json
@@ -32,7 +32,7 @@ sed -i '/"-XmxTEMP",/ a\
 	"-Ddeployment.user.cachedir=/data",\' /app/ProjectZomboid64.json
 
 
-if awk "BEGIN {exit !($BUILD <= 39)}"; then
+if [[ $BUILD -eq 38 ]] || [[ $BUILD -eq 39 ]]; then
     sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /app/start-server.sh
 fi
 
