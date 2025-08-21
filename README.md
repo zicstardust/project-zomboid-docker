@@ -8,10 +8,7 @@
 
 | Tag | Architecture | Description |
 | :----: | :----: |--- |
-| [`latest`, `41`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build41/dockerfile) | amd64 | Last Stable Server (41.78.16) |
-| [`40`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build40/dockerfile) | amd64 | Last Build 40 Server (40.43) |
-| [`39`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build39/dockerfile) | amd64 | Last Build 39 Server (39.67.5) |
-| [`38`](https://github.com/zicstardust/project-zomboid-docker/blob/main/build38/dockerfile) | amd64 | Last Build 38 Server (38.30) |
+| [`latest`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile) | amd64 | Dedicated Server |
 
 ## Usage
 ### docker-compose
@@ -39,9 +36,19 @@ services:
 | `TZ` | Set Timezone | |
 | `PUID` | Set UID | 1000 |
 | `PGID` | Set GID | 1000 |
+| `VERSION` | Set build server version | 41 |
 | `ADMIN_USERNAME` | Set User ID | admin |
 | `ADMIN_PASSWORD` | Set Group ID | `generate random password` |
 | `STEAM` | set `0` to join non-steam players | 1 |
 | `MAX_RAM` | set max ram to JVM<br/><br/>examples:<br/><br/>`2g = 2 gigabytes`<br/><br/>`1536m = 1536 megabytes`| 4g |
 | `LANGUAGE` | set server language<br/><br/>examples: `fr`, `ru`, `en`, `pt`, `ptbr`, etc | en |
 | `UPDATE_JRE` | set `1` to update default JRE (experimental)| |
+
+## Set Version
+
+| Value | Function |
+| :----: | --- |
+| `41` | Last Build 41 Server (41.78.16) |
+| `40` | Last Build 40 Server (40.43) |
+| `39` | Last Build 39 Server (39.67.5) |
+| `38` | Last Build 38 Server (38.30) |
