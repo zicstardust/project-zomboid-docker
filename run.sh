@@ -3,6 +3,12 @@
 #download server
 /download_server.sh
 
+#download mods
+if [ "$STEAM" == "0" ] && [ "${FORCE_NO_RUN_MODS_DOWNLOADER}" != "1" ]; then
+    echo "Downloading mods for non-steam server..."
+    /mods_downloader.sh
+fi
+
 #Set non-steam
 sed -i "s/-Dzomboid.steam=1/-Dzomboid.steam=${STEAM:-1}/" /app/ProjectZomboid64.json
 

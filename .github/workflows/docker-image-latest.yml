@@ -8,6 +8,7 @@ on:
       - 'run.sh'
       - 'entrypoint.sh'
       - 'download_server.sh'
+      - 'mods_downloader.sh'
       - '.github/workflows/docker-image-latest.yml'
   pull_request:
     branches: [ "main" ]
@@ -16,6 +17,7 @@ on:
       - 'run.sh'
       - 'entrypoint.sh'
       - 'download_server.sh'
+      - 'mods_downloader.sh'
       - '.github/workflows/docker-image-latest.yml'
 
 env:

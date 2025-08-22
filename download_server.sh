@@ -26,7 +26,8 @@ else
     exit 1
 fi
 
-/steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
+echo "Downloading server version ${BUILD}..."
+/steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit &> /dev/null
 
 sleep 3
 
@@ -54,9 +55,9 @@ if [ "$UPDATE_JRE" == "1" ]; then
     else
         JRE_VERSION="17.60.17-ca-jre17.0.16"
     fi
-    echo "Updating JRE..."
+    echo "Updating JRE to ${JRE_VERSION}..."
     rm -Rf /app/jre64
-    wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_x64.tar.gz
+    wget -q https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_x64.tar.gz
     tar -xf zulu${JRE_VERSION}-linux_x64.tar.gz
     rm -f zulu${JRE_VERSION}-linux_x64.tar.gz
     mv zulu${JRE_VERSION}-linux_x64 jre64

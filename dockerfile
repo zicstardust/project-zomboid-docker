@@ -13,8 +13,9 @@ RUN wget "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
 COPY entrypoint.sh /entrypoint.sh
 COPY download_server.sh /download_server.sh
 COPY run.sh /run.sh
+COPY mods_downloader.sh /mods_downloader.sh
 
-RUN chmod +x /entrypoint.sh /run.sh /download_server.sh /steam/steamcmd.sh
+RUN chmod +x /entrypoint.sh /run.sh /download_server.sh /steam/steamcmd.sh /mods_downloader.sh
 
 EXPOSE 16261/udp
 #EXPOSE 16262/udp
