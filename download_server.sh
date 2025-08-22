@@ -18,11 +18,13 @@ fi
 
 /steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
 
-#if [ "$BUILD" != "41" ]; then
+sleep 3
+
+if awk "BEGIN {exit !($BUILD <= 40)}"; then
     sed -i "s/Xmx2048m/XmxTEMP/" /app/ProjectZomboid64.json
-#else
+else
     sed -i "s/Xmx8g/XmxTEMP/" /app/ProjectZomboid64.json
-#fi
+fi
 
 sed -i '/"-XmxTEMP",/ a\
 		"-Duser.language=TEMP",\' /app/ProjectZomboid64.json
@@ -32,18 +34,16 @@ sed -i '/"-XmxTEMP",/ a\
 	"-Ddeployment.user.cachedir=/data",\' /app/ProjectZomboid64.json
 
 
-if [[ $BUILD -eq 38 ]] || [[ $BUILD -eq 39 ]]; then
+if awk "BEGIN {exit !($BUILD <= 39)}"; then
     sed -i '/INSTDIR="`pwd`"/ a\ulimit -n 4096\' /app/start-server.sh
 fi
 
-
-if awk "BEGIN {exit !($BUILD <= 40)}"; then
-    JRE_VERSION="8.88.0.19-ca-jre8.0.462"
-else
-    JRE_VERSION="17.60.17-ca-jre17.0.16"
-fi
-
 if [ "$UPDATE_JRE" == "1" ]; then
+    if awk "BEGIN {exit !($BUILD <= 40)}"; then
+        JRE_VERSION="8.88.0.19-ca-jre8.0.462"
+    else
+        JRE_VERSION="17.60.17-ca-jre17.0.16"
+    fi
     echo "Updating JRE..."
     rm -Rf /app/jre64
     wget https://cdn.azul.com/zulu/bin/zulu${JRE_VERSION}-linux_x64.tar.gz

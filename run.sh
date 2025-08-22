@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#download server
+/download_server.sh
+
 #Set non-steam
 sed -i "s/-Dzomboid.steam=1/-Dzomboid.steam=${STEAM:-1}/" /app/ProjectZomboid64.json
 
