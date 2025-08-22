@@ -46,9 +46,14 @@ services:
 
 ## Set BUILD Environment
 
-| Value | Function |
-| :----: | --- |
-| `41` | Last Build 41 Server (41.78.16) |
-| `40` | Last Build 40 Server (40.43) |
-| `39` | Last Build 39 Server (39.67.5) |
-| `38` | Last Build 38 Server (38.30) |
+| Value | Description | Server version |
+| :----: | --- | --- |
+| `41` | Last Build 41 Server | 41.78.16 |
+| `41.78.7` | Legacy build 41 Server | 41.78.7 |
+| `41.77` | Legacy build 41 Server | 41.77 |
+| `41.73` | Legacy build 41 Server | 41.73 |
+| `41.71` | Legacy build 41 Server | 41.71 |
+| `41.68` | Legacy build 41 Server | 41.68 |
+| `40` | Last Build 40 Server | 40.43 |
+| `39` | Last Build 39 Server | 39.67.5 |
+| `38` | Last Build 38 Server | 38.30 |

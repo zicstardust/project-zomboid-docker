@@ -5,6 +5,16 @@ set -e
 
 if [ "$BUILD" == "41" ]; then
     BRANCHE="public"
+elif [ "$BUILD" == "41.78.7" ]; then
+    BRANCHE="legacy_41_78_7"
+elif [ "$BUILD" == "41.77" ]; then
+    BRANCHE="legacy41_77"
+elif [ "$BUILD" == "41.73" ]; then
+    BRANCHE="legacy41_73"
+elif [ "$BUILD" == "41.71" ]; then
+    BRANCHE="legacy_41_71"
+elif [ "$BUILD" == "41.68" ]; then
+    BRANCHE="legacy41_68"
 elif [ "$BUILD" == "40" ]; then
     BRANCHE="legacy40"
 elif [ "$BUILD" == "39" ]; then
