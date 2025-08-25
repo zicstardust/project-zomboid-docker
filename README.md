@@ -1,5 +1,5 @@
 # Project Zomboid Dedicated Server Docker 
-Docker container Project Zomboid dedicated server with auto download of workshop mods for non-steam servers
+Project Zomboid dedicated server container with auto download of workshop mods for non-steam servers
 
 [GitHub](https://github.com/zicstardust/project-zomboid-docker)
 
