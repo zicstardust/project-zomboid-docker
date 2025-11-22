@@ -25,7 +25,7 @@ services:
       #- 16262:16262/udp #Direct Connection (only build 41)
       #- 8766:8766/udp #Steam Port 1 (only builds 40, 39 and 38)
       #- 8767:8767/udp #Steam Port 2 (only builds 40, 38 and 38)
-      #- 27015:27015 #Rcon_port (Import set rcon password in server.ini)
+      #- 27015:27015 #Rcon_port (IMPORTANT: set rcon password in server.ini)
     volumes:
       - /path/to/data:/data
 ```
