@@ -44,7 +44,7 @@ services:
 | `MAX_RAM` | set max ram to JVM<br/><br/>examples:<br/><br/>`2g = 2 gigabytes`<br/><br/>`1536m = 1536 megabytes`| 4g |
 | `LANGUAGE` | set server language<br/><br/>examples: `fr`, `ru`, `en`, `pt`, `ptbr`, etc | en |
 | `UPDATE_JRE` | set `1` to update default JRE (experimental)| |
-| `FORCE_NO_RUN_MODS_DOWNLOADER` | set `1` to disable auto mods downloader | |
+| `DISABLE_MOD_DOWNLOADER` | set `1` to disable auto mods downloader | |
 
 ## Set BUILD Environment
 
@@ -67,4 +67,4 @@ If the STEAM environment variable is set to `0` and you have mods in the `Worksh
 
 Mods in the `WorkshopItems` key will automatically be downloaded and will replace all files in the `/data/Zomboid/mods` directory.
 
-To disable automatic mod downloads, set the `FORCE_NO_RUN_MODS_DOWNLOADER` environment variable to `1`.
+To disable automatic mod downloads, set the `DISABLE_MOD_DOWNLOADER` environment variable to `1`.

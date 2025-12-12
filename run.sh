@@ -4,7 +4,7 @@
 /download_server.sh
 
 #download mods
-if [ "$STEAM" == "0" ] && [ "${FORCE_NO_RUN_MODS_DOWNLOADER}" != "1" ]; then
+if [ "$STEAM" == "0" ] && [ "${DISABLE_MOD_DOWNLOADER}" != "1" ]; then
     echo "Downloading mods for non-steam server..."
     /mods_downloader.sh
 fi
