@@ -1,10 +1,14 @@
 #!/bin/bash
 
 set -e
-: "${BUILD:=41}"
+: "${BUILD:=stable}"
 
-if [ "$BUILD" == "41" ]; then
+if [ "$BUILD" == "42" ] || [ "$BUILD" == "unstable" ]; then
+    BRANCHE="unstable"
+    BUILD="42"
+elif [ "$BUILD" == "41" ] || [ "$BUILD" == "stable" ]; then
     BRANCHE="public"
+    BUILD="41"
 elif [ "$BUILD" == "41.78.7" ]; then
     BRANCHE="legacy_41_78_7"
 elif [ "$BUILD" == "41.77" ]; then
@@ -52,8 +56,10 @@ fi
 if [ "$UPDATE_JRE" == "1" ]; then
     if awk "BEGIN {exit !($BUILD <= 40)}"; then
         JRE_VERSION="8.88.0.19-ca-jre8.0.462"
-    else
+    elif awk "BEGIN {exit !($BUILD <= 41)}"; then
         JRE_VERSION="17.60.17-ca-jre17.0.16"
+    else
+        JRE_VERSION="25.30.17-ca-jre25.0.1"
     fi
     echo "Updating JRE to ${JRE_VERSION}..."
     rm -Rf /app/jre64

@@ -22,7 +22,7 @@ services:
       TZ: America/New_York
     ports:
       - 16261:16261/udp #Default_Port
-      #- 16262:16262/udp #Direct Connection (only build 41)
+      #- 16262:16262/udp #Direct Connection (only build 41 and 42)
       #- 8766:8766/udp #Steam Port 1 (only builds 40, 39 and 38)
       #- 8767:8767/udp #Steam Port 2 (only builds 40, 38 and 38)
       #- 27015:27015 #Rcon_port (IMPORTANT: set rcon password in server.ini)
@@ -37,7 +37,7 @@ services:
 | `TZ` | Set Timezone | |
 | `PUID` | Set UID | 1000 |
 | `PGID` | Set GID | 1000 |
-| `BUILD` | Set build server version | 41 |
+| `BUILD` | Set build server version | stable |
 | `ADMIN_USERNAME` | Set User ID | admin |
 | `ADMIN_PASSWORD` | Set Group ID | `generate random password` |
 | `STEAM` | set `0` to join non-steam players | 1 |
@@ -50,7 +50,8 @@ services:
 
 | Value | Description | Server version |
 | :----: | --- | --- |
-| `41` | Last Build 41 Server | 41.78.16 |
+| `42`, `unstable` | Last Build 42 Server | 42.13.0  |
+| `41`, `stable` | Last Build 41 Server | 41.78.16 |
 | `41.78.7` | Legacy build 41 Server | 41.78.7 |
 | `41.77` | Legacy build 41 Server | 41.77 |
 | `41.73` | Legacy build 41 Server | 41.73 |
