@@ -55,9 +55,9 @@ fi
 
 if [ "$UPDATE_JRE" == "1" ]; then
     if awk "BEGIN {exit !($BUILD <= 40)}"; then
-        JRE_VERSION="8.88.0.19-ca-jre8.0.462"
+        JRE_VERSION="8.90.0.19-ca-jre8.0.472"
     elif awk "BEGIN {exit !($BUILD <= 41)}"; then
-        JRE_VERSION="17.60.17-ca-jre17.0.16"
+        JRE_VERSION="17.62.17-ca-jre17.0.17"
     else
         JRE_VERSION="25.30.17-ca-jre25.0.1"
     fi
