@@ -13,8 +13,8 @@ if ! id -u pzserver >/dev/null 2>&1; then
     useradd -m -u "$PUID" -g "$PGID" -s /sbin/nologin pzserver
 fi
 
-mkdir -p /data /home/pzserver
+mkdir -p /data /home/pzserver /cache
 
-chown -R pzserver:pzserver /app /data /home/pzserver /steam/
+chown -R pzserver:pzserver /app /data /home/pzserver /steam /cache
 
 exec gosu pzserver "$@"

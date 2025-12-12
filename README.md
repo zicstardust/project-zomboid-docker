@@ -28,6 +28,7 @@ services:
       #- 27015:27015 #Rcon_port (IMPORTANT: set rcon password in server.ini)
     volumes:
       - /path/to/data:/data
+      #- /path/to/cache:/cache #Opcional to download cache
 ```
 
 ## Environment variables
@@ -45,6 +46,7 @@ services:
 | `LANGUAGE` | set server language<br/><br/>examples: `fr`, `ru`, `en`, `pt`, `ptbr`, etc | en |
 | `UPDATE_JRE` | set `1` to update default JRE (experimental)| |
 | `DISABLE_MOD_DOWNLOADER` | set `1` to disable auto mods downloader | |
+| `DISABLE_CACHE` | set `1` to disable download cache | |
 
 ## Set BUILD Environment
 

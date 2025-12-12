@@ -13,8 +13,9 @@ COPY entrypoint.sh /entrypoint.sh
 COPY download_server.sh /download_server.sh
 COPY run.sh /run.sh
 COPY mods_downloader.sh /mods_downloader.sh
+COPY cache.sh /cache.sh
 
-RUN chmod +x /entrypoint.sh /run.sh /download_server.sh /steam/steamcmd.sh /mods_downloader.sh
+RUN chmod +x /entrypoint.sh /run.sh /download_server.sh /steam/steamcmd.sh /mods_downloader.sh /cache.sh
 
 EXPOSE 16261/udp
 #EXPOSE 16262/udp

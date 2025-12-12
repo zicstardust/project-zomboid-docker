@@ -2,13 +2,16 @@
 
 set -e
 : "${BUILD:=stable}"
+: "${APP_CACHE:=1}"
 
 if [ "$BUILD" == "42" ] || [ "$BUILD" == "unstable" ]; then
     BRANCHE="unstable"
     BUILD="42"
+    APP_CACHE="0"
 elif [ "$BUILD" == "41" ] || [ "$BUILD" == "stable" ]; then
     BRANCHE="public"
     BUILD="41"
+    APP_CACHE="0"
 elif [ "$BUILD" == "41.78.7" ]; then
     BRANCHE="legacy_41_78_7"
 elif [ "$BUILD" == "41.77" ]; then
