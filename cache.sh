@@ -13,9 +13,16 @@ backup_steamcmd(){
     if [ -e "/${cache_dir}/steamcmd.tar.gz" ]; then
         rm -f "/${cache_dir}/steamcmd.tar.gz"
     fi
+
+    if [ -e "/${cache_dir}/steamcmd_config.tar.gz" ]; then
+        rm -f "/${cache_dir}/steamcmd_config.tar.gz"
+    fi
+
     tar -C /steam -czf ${cache_dir}/steamcmd.tar.gz .
     tar -C /home/pzserver -czf ${cache_dir}/steamcmd_config.tar.gz ./Steam
+    chmod 440 ${cache_dir}/steamcmd.tar.gz ${cache_dir}/steamcmd_config.tar.gz
 }
+
 
 restore_steamcmd(){
     if [ -e "${cache_dir}/steamcmd.tar.gz" ]; then
@@ -34,6 +41,7 @@ backup_app(){
         fi
 
         tar -C /app -czf ${cache_dir}/app_${BUILD}.tar.gz .
+        chmod 440 ${cache_dir}/app_${BUILD}.tar.gz
     fi
 }
 
