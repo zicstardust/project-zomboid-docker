@@ -31,7 +31,26 @@ else
 fi
 
 echo "Downloading server version ${BUILD}..."
-/steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
+
+if [ "${DISABLE_CACHE}" != "1" ]; then
+    /cache.sh restore_steamcmd
+    /cache.sh restore_app $BUILD
+fi
+
+RUN_AGAIN=1
+while [ $RUN_AGAIN -eq 1 ]
+do
+    /steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
+    
+    if [ "$?" == "0" ]; then
+        RUN_AGAIN=0
+    fi  
+done
+
+if [ "${DISABLE_CACHE}" != "1" ]; then
+    /cache.sh backup_steamcmd
+    /cache.sh backup_app $BUILD $APP_CACHE
+fi
 
 sleep 3
 
