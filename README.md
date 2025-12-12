@@ -28,7 +28,7 @@ services:
       #- 27015:27015 #Rcon_port (IMPORTANT: set rcon password in server.ini)
     volumes:
       - /path/to/data:/data
-      #- /path/to/cache:/cache #Opcional to download cache
+      - /path/to/cache:/cache #Opcional: Download cache
 ```
 
 ## Environment variables
