@@ -31,7 +31,7 @@ else
 fi
 
 echo "Downloading server version ${BUILD}..."
-/steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit &> /dev/null
+/steam/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
 
 sleep 3
 
