@@ -37,14 +37,3 @@ for item in "${ids[@]}"; do
 done
 
 find /home/pzserver/Steam/steamapps/workshop/content/108600/ -maxdepth 3 -type d -path "*/mods/*" -exec cp -r {} "$mods_dir" \;
-
-#mod_ids=""
-#for info_file in "$mods_dir"/*/mod.info; do
-#    id=$(ini_get "$info_file" "id")
-#    mod_ids+="${id};"
-#done
-
-#mod_ids=${mod_ids%;} 
-#echo
-#echo "Mods=$mod_ids"
-#echo
