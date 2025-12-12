@@ -2,9 +2,8 @@ FROM debian:13.2-slim
 
 WORKDIR /app
 
-RUN apt-get update && apt-get -y install ca-certificates gosu wget lib32gcc-s1
-
-RUN wget "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"; \
+RUN apt-get update && apt-get -y install ca-certificates gosu wget lib32gcc-s1; \
+	wget "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"; \
 	tar zxvf steamcmd_linux.tar.gz; \
 	rm -f steamcmd_linux.tar.gz; \
 	mkdir /steam; \
