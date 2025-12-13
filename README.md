@@ -49,7 +49,7 @@ services:
 | `DISABLE_MOD_DOWNLOADER` | set `1` to disable auto mods downloader | |
 | `DISABLE_CACHE` | set `1` to disable download cache | |
 
-## Set BUILD Environment
+## Set BUILD
 
 | Value | Description | Server version |
 | :----: | --- | --- |
