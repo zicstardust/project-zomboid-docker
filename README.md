@@ -18,6 +18,7 @@ services:
   server:
     container_name: project-zomboid-dedicated-server
     image: zicstardust/project-zomboid-dedicated-server:latest
+    restart: unless-stopped
     environment:
       TZ: America/New_York
     ports:
