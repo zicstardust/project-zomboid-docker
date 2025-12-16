@@ -34,7 +34,7 @@ restore_steamcmd(){
 
 
 backup_app(){
-    if [ "${APP_CACHE}" != "0" ]; then
+    if [ "${APP_CACHE}" == "1" ]; then
         echo "Caching server version ${BUILD}..."
         if [ -e "${cache_dir}/app_${BUILD}.tar.gz" ]; then
             rm -f "${cache_dir}/app_${BUILD}.tar.gz"
