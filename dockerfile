@@ -14,8 +14,8 @@ RUN chmod +x /*.sh; \
 	wget "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"; \
 	tar zxvf steamcmd_linux.tar.gz; \
 	rm -f steamcmd_linux.tar.gz; \
-	mkdir /steam; \
-	mv /app/* /steam/
+	mkdir /steamcmd; \
+	mv /app/* /steamcmd/
 
 EXPOSE 16261/udp
 #EXPOSE 16262/udp

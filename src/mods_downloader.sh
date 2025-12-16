@@ -33,7 +33,7 @@ rm -Rf ${mods_dir}/*
 
 for item in "${ids[@]}"; do
     echo "Downloading mod: \"$item\"..."
-    /steam/steamcmd.sh +login anonymous +workshop_download_item 108600 "$item" +quit &> /dev/null
+    /steamcmd/steamcmd.sh +login anonymous +workshop_download_item 108600 "$item" +quit &> /dev/null
 done
 
 find /home/pzserver/Steam/steamapps/workshop/content/108600/ -maxdepth 3 -type d -path "*/mods/*" -exec cp -r {} "$mods_dir" \;

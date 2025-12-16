@@ -15,6 +15,6 @@ fi
 
 mkdir -p /data /home/pzserver /cache
 
-chown -R pzserver:pzserver /app /data /home/pzserver /steam /cache
+chown -R pzserver:pzserver /app /data /home/pzserver /steamcmd /cache
 
 exec gosu pzserver "$@"
