@@ -3,6 +3,8 @@
 set -e
 : "${BUILD:=stable}"
 : "${APP_CACHE:=1}"
+: "${DISABLE_CACHE:=0}"
+: "${UPDATE_JRE:=0}"
 
 if [ "$BUILD" == "42" ] || [ "$BUILD" == "unstable" ]; then
     BRANCHE="unstable"
@@ -34,7 +36,7 @@ fi
 
 echo "Downloading server version ${BUILD}..."
 
-if [ "${DISABLE_CACHE}" != "1" ]; then
+if [ "${DISABLE_CACHE}" == "0" ]; then
     /cache.sh restore_steamcmd
     /cache.sh restore_app $BUILD
 fi
@@ -49,7 +51,7 @@ do
     fi  
 done
 
-if [ "${DISABLE_CACHE}" != "1" ]; then
+if [ "${DISABLE_CACHE}" == "0" ]; then
     /cache.sh backup_steamcmd
     /cache.sh backup_app $BUILD $APP_CACHE
 fi

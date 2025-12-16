@@ -45,9 +45,9 @@ services:
 | `STEAM` | set `0` to join non-steam players | 1 |
 | `MAX_RAM` | set max ram to JVM<br/><br/>examples:<br/><br/>`2g = 2 gigabytes`<br/><br/>`1536m = 1536 megabytes`| 4g |
 | `LANGUAGE` | set server language<br/><br/>examples: `fr`, `ru`, `en`, `pt`, `ptbr`, etc | en |
-| `UPDATE_JRE` | set `1` to update default JRE (experimental)| |
-| `DISABLE_MOD_DOWNLOADER` | set `1` to disable auto mods downloader | |
-| `DISABLE_CACHE` | set `1` to disable download cache | |
+| `UPDATE_JRE` | set `1` to update default JRE (experimental)| 0 |
+| `DISABLE_MOD_DOWNLOADER` | set `1` to disable auto mods downloader | 0 |
+| `DISABLE_CACHE` | set `1` to disable download cache | 0 |
 
 ## Set BUILD
 
