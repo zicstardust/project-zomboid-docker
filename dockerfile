@@ -1,5 +1,7 @@
 FROM debian:13.2-slim
 
+ENV DEBIAN_FRONTEND="noninteractive"
+
 WORKDIR /app
 
 COPY entrypoint.sh /entrypoint.sh
