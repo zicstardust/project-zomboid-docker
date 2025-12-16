@@ -1,6 +1,4 @@
 data/
 cache/
 .env
-start-server.sh
-ProjectZomboid64.json
 .vscode/
