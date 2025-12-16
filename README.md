@@ -15,7 +15,7 @@ Project Zomboid dedicated server container with auto download of workshop mods f
 ### Compose
 ```
 services:
-  server:
+  pzserver:
     container_name: project-zomboid-dedicated-server
     image: docker.io/zicstardust/project-zomboid-dedicated-server:latest
     restart: unless-stopped
