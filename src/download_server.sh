@@ -79,10 +79,10 @@ fi
 if [ "$UPDATE_JRE" == "1" ]; then
     if awk "BEGIN {exit !($BUILD <= 40)}"; then
         JRE_VERSION="8.90.0.19-ca-jre8.0.472"
-    elif awk "BEGIN {exit !($BUILD <= 41)}"; then
-        JRE_VERSION="17.62.17-ca-jre17.0.17"
-    else
+    elif awk "BEGIN {exit !($BUILD < 42)}"; then
         JRE_VERSION="25.30.17-ca-jre25.0.1"
+    else
+        JRE_VERSION="17.62.17-ca-jre17.0.17"
     fi
     echo "Updating JRE to ${JRE_VERSION}..."
     rm -Rf /app/jre64
