@@ -6,13 +6,19 @@ set -e
 : "${DISABLE_CACHE:=0}"
 : "${UPDATE_JRE:=0}"
 
-if [ "$BUILD" == "42" ] || [ "$BUILD" == "unstable" ]; then
-    BRANCHE="unstable"
+
+if [ "$BUILD" == "unstable" ]; then
     BUILD="42"
     APP_CACHE="0"
-elif [ "$BUILD" == "41" ] || [ "$BUILD" == "stable" ]; then
-    BRANCHE="public"
+elif [ "$BUILD" == "stable" ]; then
     BUILD="41"
+fi
+
+
+if [ "$BUILD" == "42" ]; then
+    BRANCHE="unstable"
+elif [ "$BUILD" == "41" ]; then
+    BRANCHE="public"
 elif [ "$BUILD" == "41.78.7" ]; then
     BRANCHE="legacy_41_78_7"
 elif [ "$BUILD" == "41.77" ]; then
@@ -30,7 +36,7 @@ elif [ "$BUILD" == "39" ]; then
 elif [ "$BUILD" == "38" ]; then
     BRANCHE="38.30(pre-vehicles)"
 else
-    echo "${BUILD} not supported"
+    echo "BUILD ${BUILD} not supported"
     exit 1
 fi
 
