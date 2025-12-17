@@ -10,12 +10,12 @@ cache_dir="/cache"
 
 backup_steamcmd(){
     echo "Caching steamcmd..."
-    if [ -e "/${cache_dir}/steamcmd.tar.gz" ]; then
-        rm -f "/${cache_dir}/steamcmd.tar.gz"
+    if [ -e "${cache_dir}/steamcmd.tar.gz" ]; then
+        rm -f "${cache_dir}/steamcmd.tar.gz"
     fi
 
-    if [ -e "/${cache_dir}/steamcmd_config.tar.gz" ]; then
-        rm -f "/${cache_dir}/steamcmd_config.tar.gz"
+    if [ -e "${cache_dir}/steamcmd_config.tar.gz" ]; then
+        rm -f "${cache_dir}/steamcmd_config.tar.gz"
     fi
 
     tar -C /steamcmd -czf ${cache_dir}/steamcmd.tar.gz .
