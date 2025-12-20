@@ -13,7 +13,7 @@ Project Zomboid dedicated server container with auto download of workshop mods f
 | Registry | Description |
 | :----: |--- |
 | [`docker.io`](https://hub.docker.com/r/zicstardust/project-zomboid-dedicated-server) | Docker Hub |
-| [`gh.io`](https://github.com/zicstardust/project-zomboid-dedicated-server/pkgs/container/project-zomboid-dedicated-server) | GitHub package |
+| [`ghcr.io`](https://github.com/zicstardust/project-zomboid-dedicated-server/pkgs/container/project-zomboid-dedicated-server) | GitHub package |
 
 ## Usage
 ### Compose

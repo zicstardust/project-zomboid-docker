@@ -1,4 +1,4 @@
-name: Push image tag latest to gh.io
+name: Push image tag latest to ghcr.io
 
 on:
   push:
