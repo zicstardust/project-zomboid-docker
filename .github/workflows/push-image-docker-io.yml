@@ -7,14 +7,14 @@ on:
       - 'dockerfile'
       - 'entrypoint.sh'
       - 'src/**'
-      - '.github/workflows/docker-image-latest.yml'
+      - '.github/workflows/push-image-docker-io.yml'
   pull_request:
     branches: [ "main" ]
     paths:
       - 'dockerfile'
       - 'entrypoint.sh'
       - 'src/**'
-      - '.github/workflows/docker-image-latest.yml'
+      - '.github/workflows/push-image-docker-io.yml'
 
 env:
   PLATAFORM_ARCH: linux/amd64
