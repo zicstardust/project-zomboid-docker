@@ -1,7 +1,7 @@
 # Project Zomboid Dedicated Server 
 Project Zomboid dedicated server container with auto download of workshop mods for non-steam servers
 
-[GitHub](https://github.com/zicstardust/project-zomboid-docker)
+[GitHub](https://github.com/zicstardust/project-zomboid-dedicated-server)
 
 [Docker Hub](https://hub.docker.com/r/zicstardust/project-zomboid-dedicated-server)
 
@@ -9,7 +9,7 @@ Project Zomboid dedicated server container with auto download of workshop mods f
 
 | Tag | Architecture | Description |
 | :----: | :----: |--- |
-| [`latest`](https://github.com/zicstardust/project-zomboid-docker/blob/main/dockerfile) | amd64 | Dedicated Server |
+| [`latest`](https://github.com/zicstardust/project-zomboid-dedicated-server/blob/main/dockerfile) | amd64 | Dedicated Server |
 
 ## Usage
 ### Compose
