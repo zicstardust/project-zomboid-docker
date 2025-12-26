@@ -20,9 +20,9 @@ RUN chmod +x /*.sh; \
 	mv /app/* /steamcmd/
 
 EXPOSE 16261/udp
-#EXPOSE 16262/udp
-#EXPOSE 8766/udp
-#EXPOSE 8766/udp
+EXPOSE 16262/udp
+EXPOSE 8766/udp
+EXPOSE 8766/udp
 EXPOSE 27015
 
 VOLUME [ "/data" ]
