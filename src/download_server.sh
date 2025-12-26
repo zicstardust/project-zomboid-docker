@@ -62,7 +62,6 @@ if [ "${DISABLE_CACHE}" == "0" ]; then
     /cache.sh backup_app $BUILD $APP_CACHE
 fi
 
-sleep 3
 
 if awk "BEGIN {exit !($BUILD <= 40)}"; then
     sed -i "s/Xmx2048m/XmxTEMP/" /app/ProjectZomboid64.json
