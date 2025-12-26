@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 option=$1
 BUILD=$2

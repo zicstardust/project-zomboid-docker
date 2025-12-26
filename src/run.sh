@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e
 : "${DISABLE_MOD_DOWNLOADER:=0}"
