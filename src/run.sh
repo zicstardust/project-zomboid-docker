@@ -22,8 +22,7 @@ sed -i "s/-XmxTEMP/-Xmx${MAX_RAM:-4g}/" /app/ProjectZomboid64.json
 sed -i "s/-Duser.language=TEMP/-Duser.language=${LANGUAGE:-en}/" /app/ProjectZomboid64.json
 
 #server run
-RANDOM_PASSWORD=$(head -c 16 /dev/urandom | base64 | tr -dc 'a-zA-Z0-9')
 /app/start-server.sh \
     -servername server \
     -adminusername ${ADMIN_USERNAME:-admin} \
-    -adminpassword ${ADMIN_PASSWORD:-${RANDOM_PASSWORD}}
+    -adminpassword ${ADMIN_PASSWORD:-$(head -c 16 /dev/urandom | base64 | tr -dc 'a-zA-Z0-9')}
