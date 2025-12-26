@@ -62,5 +62,5 @@ fi
 #Download Mods
 if [ "$STEAM" == "0" ] && [ "${DISABLE_MOD_DOWNLOADER}" == "0" ]; then
     echo "Downloading mods for non-steam server..."
-    /mods_downloader.sh
+    mods_downloader.sh
 fi

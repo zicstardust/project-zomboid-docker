@@ -5,9 +5,10 @@ ENV DEBIAN_FRONTEND="noninteractive"
 WORKDIR /app
 
 COPY entrypoint.sh /entrypoint.sh
-COPY src/* /
+COPY src/* /usr/local/bin/
 
-RUN chmod +x /*.sh; \
+RUN chmod +x /entrypoint.sh; \
+	chmod +x /usr/local/bin/*; \
 	apt-get update && apt-get -y install ca-certificates gosu wget lib32gcc-s1; \
 	apt-get -y autoremove; \
 	apt-get -y autoclean; \
@@ -28,4 +29,5 @@ EXPOSE 27015
 VOLUME [ "/data" ]
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/run.sh"]
+
+CMD ["run.sh"]

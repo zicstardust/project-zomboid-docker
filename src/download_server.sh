@@ -42,8 +42,8 @@ fi
 echo "Downloading server BUILD ${BUILD}..."
 
 if [ "${DISABLE_CACHE}" == "0" ]; then
-    /cache.sh restore_steamcmd
-    /cache.sh restore_app $BUILD
+    cache.sh restore_steamcmd
+    cache.sh restore_app $BUILD
 fi
 
 RUN_AGAIN=1
@@ -57,10 +57,10 @@ do
 done
 
 if [ "${DISABLE_CACHE}" == "0" ]; then
-    /cache.sh backup_steamcmd
-    /cache.sh backup_app $BUILD $APP_CACHE
+    cache.sh backup_steamcmd
+    cache.sh backup_app $BUILD $APP_CACHE
 fi
 
 
 #Configure server
-/configure_server.sh $BUILD
+configure_server.sh $BUILD
