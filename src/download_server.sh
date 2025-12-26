@@ -6,6 +6,9 @@ set -e
 : "${DISABLE_CACHE:=0}"
 : "${UPDATE_JRE:=0}"
 
+JRE8_VERSION="8.90.0.19-ca-jre8.0.472"
+JRE17_VERSION="17.62.17-ca-jre17.0.17"
+JRE25_VERSION="25.30.17-ca-jre25.0.1"
 
 if [ "$BUILD" == "unstable" ]; then
     BUILD="42"
@@ -83,11 +86,11 @@ fi
 
 if [ "$UPDATE_JRE" == "1" ]; then
     if awk "BEGIN {exit !($BUILD <= 40)}"; then
-        JRE_VERSION="8.90.0.19-ca-jre8.0.472"
+        JRE_VERSION=$JRE8_VERSION
     elif awk "BEGIN {exit !($BUILD >= 42)}"; then
-        JRE_VERSION="25.30.17-ca-jre25.0.1"
+        JRE_VERSION=$JRE25_VERSION
     else
-        JRE_VERSION="17.62.17-ca-jre17.0.17"
+        JRE_VERSION=$JRE17_VERSION
     fi
     echo "Updating JRE to ${JRE_VERSION}..."
     rm -Rf /app/jre64
