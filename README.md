@@ -46,7 +46,7 @@ services:
 | `PGID` | Set GID | 1000 | |
 | `BUILD` | Set build server version | stable | [Look at the set build section](#set-build) |
 | `ADMIN_USERNAME` | Set admin username | admin | |
-| `ADMIN_PASSWORD` | Set admin password | `generate random password` | Random password can be viewed in the server log |
+| `ADMIN_PASSWORD` | Set admin password | `generate random password` | Random password can be viewed in container log |
 | `STEAM` | set `0` to join non-steam players | 1 |
 | `MAX_RAM` | set max ram to JVM | 4g | `8g = 8 gigabytes`<br/>`2048m = 2048 megabytes` |
 | `LANGUAGE` | set server language | en | `fr`, `ru`, `en`, `pt`, `ptbr`, etc |
@@ -58,7 +58,7 @@ services:
 
 | Value | Description | Server version |
 | :----: | --- | --- |
-| `42`, `unstable` | Last Build 42 Server | 42.13.0  |
+| `42`, `unstable` | Last Build 42 Server | 42.13.1  |
 | `41`, `stable` | Last Build 41 Server | 41.78.16 |
 | `41.78.7` | Legacy build 41 Server | 41.78.7 |
 | `41.77` | Legacy build 41 Server | 41.77 |
