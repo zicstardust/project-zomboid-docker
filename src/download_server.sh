@@ -2,8 +2,8 @@
 
 set -e
 : "${BUILD:=stable}"
-: "${APP_CACHE:=1}"
-: "${DISABLE_CACHE:=0}"
+: "${APP_CACHE:=true}"
+: "${DISABLE_CACHE:=false}"
 
 
 if [ "$BUILD" == "unstable" ]; then
@@ -41,7 +41,7 @@ fi
 
 echo "Downloading server BUILD ${BUILD}..."
 
-if [ "${DISABLE_CACHE}" == "0" ]; then
+if [[ "$DISABLE_CACHE" =~ ^(0|false|False|n|N)$ ]]; then
     cache.sh restore_steamcmd
     cache.sh restore_app $BUILD
 fi
@@ -56,7 +56,7 @@ do
     fi  
 done
 
-if [ "${DISABLE_CACHE}" == "0" ]; then
+if [[ "$DISABLE_CACHE" =~ ^(0|false|False|n|N)$ ]]; then
     cache.sh backup_steamcmd
     cache.sh backup_app $BUILD $APP_CACHE
 fi

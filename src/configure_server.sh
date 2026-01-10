@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 set -e
-: "${UPDATE_JRE:=0}"
-: "${STEAM:=1}"
-: "${DISABLE_MOD_DOWNLOADER:=0}"
+: "${UPDATE_JRE:=false}"
+: "${STEAM:=true}"
+: "${DISABLE_MOD_DOWNLOADER:=false}"
 
 BUILD=$1
 JRE8_VERSION="8.90.0.19-ca-jre8.0.472"
@@ -38,11 +38,12 @@ fi
 
 
 #Set STEAM
-sed -i "s/-Dzomboid.steam=1/-Dzomboid.steam=${STEAM}/" /app/ProjectZomboid64.json
-
+if [[ "$STEAM" =~ ^(0|false|False|n|N)$ ]]; then
+    sed -i "s/-Dzomboid.steam=1/-Dzomboid.steam=0/" /app/ProjectZomboid64.json
+fi
 
 #Update JRE
-if [ "$UPDATE_JRE" == "1" ]; then
+if [[ "$UPDATE_JRE" =~ ^(1|true|True|y|Y)$ ]]; then
     if awk "BEGIN {exit !($BUILD <= 40)}"; then
         JRE_VERSION=$JRE8_VERSION
     elif awk "BEGIN {exit !($BUILD >= 42)}"; then
@@ -60,7 +61,7 @@ if [ "$UPDATE_JRE" == "1" ]; then
 fi
 
 #Download Mods
-if [ "$STEAM" == "0" ] && [ "${DISABLE_MOD_DOWNLOADER}" == "0" ]; then
+if [[ "$STEAM" =~ ^(0|false|False|n|N)$ ]] && [[ "$DISABLE_MOD_DOWNLOADER" =~ ^(0|false|False|n|N)$ ]]; then
     echo "Downloading mods for non-steam server..."
     mods_downloader.sh
 fi
