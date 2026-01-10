@@ -48,7 +48,7 @@ services:
 | `ADMIN_USERNAME` | Set admin username | admin | |
 | `ADMIN_PASSWORD` | Set admin password | `generate random password` | Random password can be viewed in container log |
 | `STEAM` | set `false` to join non-steam players | true |
-| `MAX_RAM` | set max ram to JVM | 4g | `8g = 8 gigabytes`<br/>`2048m = 2048 megabytes` |
+| `MAX_RAM` | set max ram to JVM | 4g | 8g = 8 gigabytes<br/>2048m = 2048 megabytes |
 | `LANGUAGE` | set server language | en | `fr`, `ru`, `en`, `pt`, `ptbr`, etc |
 | `UPDATE_JRE` | Update default JRE (experimental)| false | |
 | `DISABLE_MOD_DOWNLOADER` | Disable auto mods downloader | false | |
@@ -71,8 +71,8 @@ services:
 
 
 ## Auto download mods for non-steam server
-If the STEAM environment variable is set to `0` and you have mods in the `WorkshopItems` key in `/data/Zomboid/Server/server.ini`.
+If the STEAM environment variable is set to `false` and you have mods in the `WorkshopItems` key in `/data/Zomboid/Server/server.ini`.
 
 Mods in the `WorkshopItems` key will automatically be downloaded and will replace all files in the `/data/Zomboid/mods` directory.
 
-To disable automatic mod downloads, set the `DISABLE_MOD_DOWNLOADER` environment variable to `1`.
+To disable automatic mod downloads, set the `DISABLE_MOD_DOWNLOADER` environment variable to `false`.
