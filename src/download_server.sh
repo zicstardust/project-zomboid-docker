@@ -49,7 +49,7 @@ fi
 RUN_AGAIN=1
 while [ $RUN_AGAIN -eq 1 ]
 do
-    /steamcmd/steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
+    steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
     
     if [ "$?" == "0" ]; then
         RUN_AGAIN=0

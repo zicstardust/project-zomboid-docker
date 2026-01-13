@@ -15,10 +15,9 @@ RUN chmod +x /entrypoint.sh; \
 	apt-get -y clean; \
 	rm -Rf /var/lib/apt/lists/*; \
 	wget "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"; \
-	tar zxvf steamcmd_linux.tar.gz; \
-	rm -f steamcmd_linux.tar.gz; \
-	mkdir /steamcmd; \
-	mv /app/* /steamcmd/
+	mkdir -p /opt/steamcmd; \
+	tar zxvf steamcmd_linux.tar.gz -C /opt/steamcmd/; \
+	rm -f steamcmd_linux.tar.gz
 
 EXPOSE 16261/udp
 EXPOSE 16262/udp
