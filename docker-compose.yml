@@ -2,7 +2,6 @@ services:
   app:
     container_name: project_zomboid_dedicated_server
     image: project-zomboid-dedicated-server:latest
-    restart: unless-stopped
     build: .
     env_file: .env
     ports:

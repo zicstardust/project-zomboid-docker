@@ -23,7 +23,6 @@ services:
   pzserver:
     container_name: project-zomboid-dedicated-server
     image: docker.io/zicstardust/project-zomboid-dedicated-server:latest
-    restart: unless-stopped
     environment:
       TZ: America/New_York
     ports:
