@@ -18,7 +18,7 @@ Project Zomboid dedicated server container with auto download of workshop mods f
 
 ## Usage
 ### Compose
-```
+``` yml
 services:
   pzserver:
     container_name: project-zomboid-dedicated-server
