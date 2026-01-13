@@ -46,15 +46,7 @@ if [[ "$DISABLE_CACHE" =~ ^(0|false|False|n|N)$ ]]; then
     cache.sh restore_app $BUILD
 fi
 
-RUN_AGAIN=1
-while [ $RUN_AGAIN -eq 1 ]
-do
-    steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
-    
-    if [ "$?" == "0" ]; then
-        RUN_AGAIN=0
-    fi  
-done
+steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate -beta "${BRANCHE}" +quit
 
 if [[ "$DISABLE_CACHE" =~ ^(0|false|False|n|N)$ ]]; then
     cache.sh backup_steamcmd
