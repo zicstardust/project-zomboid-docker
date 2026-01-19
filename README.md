@@ -57,7 +57,7 @@ services:
 
 | Value | Description | Server version |
 | :----: | --- | --- |
-| `42`, `unstable` | Last Build 42 Server | 42.13.1  |
+| `42`, `unstable` | Last Build 42 Server | 42.13.2  |
 | `41`, `stable` | Last Build 41 Server | 41.78.16 |
 | `41.78.7` | Legacy build 41 Server | 41.78.7 |
 | `41.77` | Legacy build 41 Server | 41.77 |
