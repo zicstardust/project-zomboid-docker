@@ -8,13 +8,6 @@ on:
       - 'entrypoint.sh'
       - 'src/**'
       - '.github/workflows/push-image-gh-io.yml'
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - 'dockerfile'
-      - 'entrypoint.sh'
-      - 'src/**'
-      - '.github/workflows/push-image-gh-io.yml'
 
 env:
   PLATAFORM_ARCH: linux/amd64
