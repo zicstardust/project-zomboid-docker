@@ -16,8 +16,8 @@ while true; do
     fi  
 done
 
-return_code=$?
+#return_code=$?
 
 cd $current_dir
 
-exit $return_code
+#exit $return_code
