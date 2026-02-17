@@ -57,15 +57,15 @@ services:
 
 | Value | Description | Server version |
 | :----: | --- | :---: |
-| `42`, `unstable` | Last Build 42 Server | 42.14.0  |
-| `42.13.2`, `outdatedunstable` | Legacy Build 42 Server | 42.13.2  |
+| `42`, `unstable` | Last Unstable Server | 42.14.0  |
+| `42.13.2`, `outdatedunstable` | Unstable fallback for rollbacks and prior saves | 42.13.2  |
 | `42.13.1` | Legacy Build 42 Server (Will be removing soon) | 42.13.1  |
-| `41`, `stable` | Last Build 41 Server | 41.78.16 |
+| `41`, `stable` | Last Stable Server | 41.78.16 |
 | `41.78.7` | Legacy build 41 Server | 41.78.7 |
 | `41.77` | Legacy build 41 Server | 41.77 |
-| `40` | Last Build 40 Server | 40.43 |
+| `40` | Classic Zomboid | 40.43 |
 | `39` | Last Build 39 Server | 39.67.5 |
-| `38` | Last Build 38 Server | 38.30 |
+| `38` | Final pre-vehicles version | 38.30 |
 
 
 ## Auto download mods for non-steam server
