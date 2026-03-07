@@ -4,7 +4,6 @@ current_dir=$(pwd)
 
 cd /opt/steamcmd
 
-
 while true; do
     ./steamcmd.sh "$@"
     #echo "Steamcmd return code: $?"
@@ -12,12 +11,8 @@ while true; do
     if [ "$return_code" == "0" ]; then
         break
     else
-        echo "Steamcmd error: ${return_code}, try again"
+        echo "Steamcmd error ${return_code}, try again"
     fi  
 done
 
-#return_code=$?
-
 cd $current_dir
-
-#exit $return_code
