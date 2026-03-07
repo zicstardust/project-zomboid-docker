@@ -8,9 +8,8 @@ set -e
 
 if [ "$BUILD" == "unstable" ]; then
     BUILD="42"
-    APP_CACHE="0"
 elif [ "$BUILD" == "outdatedunstable" ]; then
-    BUILD="42.13.2"
+    BUILD="42_oldunstable"
 elif [ "$BUILD" == "stable" ]; then
     BUILD="41"
 fi
@@ -18,8 +17,10 @@ fi
 
 if [ "$BUILD" == "42" ]; then
     BRANCHE="unstable"
-elif [ "$BUILD" == "42.13.2" ]; then
+    APP_CACHE="0"
+elif [ "$BUILD" == "42_oldunstable" ]; then
     BRANCHE="outdatedunstable"
+    APP_CACHE="0"
 elif [ "$BUILD" == "41" ]; then
     BRANCHE="public"
 elif [ "$BUILD" == "41.78.7" ]; then
