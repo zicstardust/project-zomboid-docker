@@ -20,8 +20,6 @@ if [ "$BUILD" == "42" ]; then
     BRANCHE="unstable"
 elif [ "$BUILD" == "42.13.2" ]; then
     BRANCHE="outdatedunstable"
-elif [ "$BUILD" == "42.13.1" ]; then
-    BRANCHE="42.13.1"
 elif [ "$BUILD" == "41" ]; then
     BRANCHE="public"
 elif [ "$BUILD" == "41.78.7" ]; then
