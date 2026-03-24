@@ -55,11 +55,11 @@ services:
 
 ## Set BUILD
 
-| Value | Description | Server version |
-| :----: | --- | :---: |
-| `unstable` | Last Unstable Server | 42.15.3  |
-| `outdatedunstable` | Unstable fallback for rollbacks and prior saves | 42.15.2  |
-| `stable` | Last Stable Server | 41.78.18 |
+| Value | Description |
+| :----: | --- |
+| `unstable` | Last Unstable Server |
+| `outdatedunstable` | Unstable fallback for rollbacks and prior saves |
+| `stable` | Last Stable Server | 
 
 ## Supported server languages
 | Value | Language name |
