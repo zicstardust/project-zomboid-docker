@@ -44,6 +44,7 @@ services:
 | `PUID` | Set UID | 1000 | |
 | `PGID` | Set GID | 1000 | |
 | `BUILD` | Set build server version | stable | [Look at the set build section](#set-build) |
+| `SERVER_NAME` | Set server name | server | |
 | `ADMIN_USERNAME` | Set admin username | admin | |
 | `ADMIN_PASSWORD` | Set admin password | `generate random password` | Random password can be viewed in container log |
 | `STEAM` | set `false` to join non-steam players | true |
@@ -93,7 +94,7 @@ services:
 | `ua` | Ukrainian |
 
 ## Auto download mods for non-steam server
-If the `STEAM` environment variable is set to `false` and you have mods in the `WorkshopItems` key in **/data/Zomboid/Server/server.ini**.
+If the `STEAM` environment variable is set to `false` and you have mods in the `WorkshopItems` key in **/data/Zomboid/Server/<SERVER_NAME>.ini**.
 
 Mods in the `WorkshopItems` key will automatically be downloaded and will replace all files in the **/data/Zomboid/mods/** directory.
 
