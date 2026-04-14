@@ -2,7 +2,6 @@
 
 option=$1
 BUILD=$2
-APP_CACHE=$3
 
 
 cache_dir="/cache"
@@ -34,15 +33,13 @@ restore_steamcmd(){
 
 
 backup_app(){
-    if [[ "$APP_CACHE" =~ ^(1|true|True|y|Y)$ ]]; then
-        echo "Caching server build ${BUILD}..."
-        if [ -e "${cache_dir}/app_${BUILD}.tar.gz" ]; then
-            rm -f "${cache_dir}/app_${BUILD}.tar.gz"
-        fi
-
-        tar -C /app -czf ${cache_dir}/app_${BUILD}.tar.gz .
-        chmod 440 ${cache_dir}/app_${BUILD}.tar.gz
+    echo "Caching server build ${BUILD}..."
+    if [ -e "${cache_dir}/app_${BUILD}.tar.gz" ]; then
+        rm -f "${cache_dir}/app_${BUILD}.tar.gz"
     fi
+
+    tar -C /app -czf ${cache_dir}/app_${BUILD}.tar.gz .
+    chmod 440 ${cache_dir}/app_${BUILD}.tar.gz
 }
 
 

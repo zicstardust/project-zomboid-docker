@@ -2,8 +2,9 @@
 
 set -e
 : "${BUILD:=stable}"
-: "${APP_CACHE:=true}"
 : "${DISABLE_CACHE:=false}"
+
+mountpoint /cache &> /dev/null || DISABLE_CACHE="true"
 
 
 if [ "$BUILD" == "unstable" ]; then
@@ -17,10 +18,8 @@ fi
 
 if [ "$BUILD" == "42" ]; then
     BRANCHE="unstable"
-    APP_CACHE="0"
 elif [ "$BUILD" == "42_oldunstable" ]; then
     BRANCHE="outdatedunstable"
-    APP_CACHE="0"
 elif [ "$BUILD" == "41" ]; then
     BRANCHE="public"
 else
@@ -39,7 +38,7 @@ steamcmd.sh +force_install_dir /app +login anonymous +app_update 380870 validate
 
 if [[ "$DISABLE_CACHE" =~ ^(0|false|False|n|N)$ ]]; then
     cache.sh backup_steamcmd
-    cache.sh backup_app $BUILD $APP_CACHE
+    cache.sh backup_app $BUILD
 fi
 
 
